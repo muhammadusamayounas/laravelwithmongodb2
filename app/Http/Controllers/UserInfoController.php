@@ -30,7 +30,6 @@ class UserInfoController extends Controller
             $objects = json_decode(json_encode($data->toArray(),true));
             $array=json_decode(json_encode($objects),true);
             return response([$array]);
-            PCNTL_ECHILD;
         }
     }
 
