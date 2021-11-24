@@ -39,22 +39,5 @@ Route::group(['middleware'=>'api','perfix'=>'auth'],function($router){
     Route::post('/seeAllFriend',[UserController::class,'seeAllFriend']);
 });
 
-Route::group(['middleware'=>'customauth'],function($router)
-{
-    Route::post('/create_post',[CreatePostController::class,'post']);
-    Route::post('/read_post',[ReadPostController::class,'read']);
-    Route::post('/delete_post',[DeletePostController::class,'delete']);
-    Route::post('/update_post',[UpdatePostController ::class,'update']);
-    
-    Route::post('/showprofile',[UserInfoController::class,'showprofile']); 
-
-    Route::post('/comment',[CommentController::class,'createComment']);
-    Route::post('/updateComment',[CommentController::class,'updateComment']);
-    Route::post('/deleteComment',[CommentController::class,'deleteComment']);
-
-
-    Route::post('/addFriend',[RequestController::class,'addFriend']);
-    Route::post('/deleteFriend',[RequestController::class,'deleteFriend']);
-});
 
 

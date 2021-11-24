@@ -54,6 +54,7 @@ class CommentController extends Controller
           '_id' =>$user_id]
         ); 
         $user_email=$get_user_email->email;
+        
         $details=
         [
             'title'=> 'Comment Notification',
@@ -63,38 +64,13 @@ class CommentController extends Controller
         return response()->json(['message'=>'Comment Added']);
        }    
    }
-}
 
-//    public function updateComment(UpdateandDeleteCommentRequest $request)
-//    {
-//        $request->validated();
-//        $key=$request->access_token;
-//        $comment=$request->comment;
-//        $comment_id=$request->comment_id;
-//        $data=DB::table('users')->where('remember_token',$key)->get();
-//        if(count($data)>0)
-//        {
-//          $id=$data[0]->id;
-//          $path = $request->file('file')->store('post');
-//          $updateDetails = [
-//           'user_id' => $id,
-//           'file' => $path,
-//           'comment'=> $comment
-//           ];
-//          if(DB::table('comments')->where(['id'=> $comment_id,'user_id'=> $id])->update($updateDetails)==1)
-//          {
-//             return response()->json(["messsage" => "Comment Updated successfully"]);
-//          }
-//          else
-//          {
-//           return response()->json(["messsage" => "You Are Not Allowed To Delete Others Comment"]);
-//          }
-//        }
-//        else
-//        {
-//         return response()->json(["messsage" => "Login Again"]);
-//        }
-//    }
+
+   public function updateComment(UpdateandDeleteCommentRequest $request)
+   {
+
+   }
+  }
 
 //    public function deleteComment(UpdateandDeleteCommentRequest $request)
 //    {
